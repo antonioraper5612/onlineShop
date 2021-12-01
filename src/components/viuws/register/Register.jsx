@@ -1,9 +1,8 @@
-import React,{useState,useContext} from 'react'
+import React,{useState} from 'react'
 
 import "../register/register.style.css";
 
 //Import Componentes
-import LoginContext from '../../../Context/LoginContext';
 
 
 const Register = () => {
