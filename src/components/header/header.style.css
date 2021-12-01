@@ -1,0 +1,122 @@
+.main-header {
+    background-color: #8555BF;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-logo {
+    display: flex;
+    width: 15%;
+}
+
+.main-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.main-logo a:hover {
+    color: #fff;
+}
+
+.main-logo img {
+    width: 30%;
+}
+
+.form-header {
+    display: flex;
+    width: 100%;
+}
+
+.main-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.main-search img {
+    width: 8%;
+}
+
+.main-search input {
+    outline: none;
+    width: 50%;
+    padding: 3px 3px;
+}
+
+.main-search button {
+    width: 33px;
+    height: 33px;
+    border: none;
+}
+
+.main-search button img {
+    width: 20px;
+}
+
+.header-content {
+    width: 55%;
+}
+
+.header-content li {
+    list-style: none;
+}
+
+.header-content a {
+    font-size: 15px;
+    opacity: 0.5;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-content a:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.main-content-items {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: auto;
+}
+
+.Categorias {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70%;
+}
+
+.Categorias li {
+    margin: 0 10px;
+}
+
+.login {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.login li {
+    margin: 0 25px;
+}
+
+.login li img {
+    width: 20px;
+}
+
+.logocard {
+    background-color: red;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 33px;
+    left: 12px;
+    text-align: center;
+}

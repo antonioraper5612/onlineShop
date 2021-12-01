@@ -1,0 +1,80 @@
+.main-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px rgb(230, 223, 223);
+    background-color: #fff;
+    width: 33%;
+    height: 450px;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: -15px -6px 26px -2px rgba(174, 157, 157, 0.49);
+    -webkit-box-shadow: -15px -6px 26px -2px rgba(174, 157, 157, 0.49);
+    -moz-box-shadow: -15px -6px 26px -2px rgba(174, 157, 157, 0.49);
+}
+
+.register-container {
+    width: 90%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.register-container h1 {
+    text-align: center;
+    width: 70%;
+    font-size: 1.6rem;
+    margin: 40px 0;
+}
+
+.register-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    width: 70%;
+    border: solid 1px rgba(199, 207, 185, 0.945);
+    font-size: 1rem;
+}
+
+.register-container input:focus {
+    outline: 2px solid rgba(51, 80, 243, 0.829);
+}
+
+.register-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 20px 0;
+}
+
+.register-buttons button {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.register-buttons button:nth-child(1) {
+    background-color: rgb(87, 111, 243);
+    color: #fff;
+    border: none;
+    transition: all 0.2s ease-out;
+    font-weight: 700;
+}
+
+.register-buttons button:nth-child(2) {
+    color: rgba(22, 56, 253, 0.829);
+    background-color: #fff;
+    border: none;
+    transition: all 0.2s ease-out;
+    font-weight: 700;
+}
+
+.register-buttons button:hover:nth-child(1) {
+    background-color: rgba(34, 89, 241, 0.993);
+}
+
+.register-buttons button:hover:nth-child(2) {
+    background-color: rgba(66, 116, 255, 0.096);
+}
