@@ -107,7 +107,7 @@ export const Header = () => {
             </div>}
 
         </form>
-        <MenuHamburgueza />
+        <MenuHamburgueza cardShop={cardShop}/>
         <div className="main-content-items ">
           <div className="header-content">
             <ul className="Categorias">
@@ -126,7 +126,6 @@ export const Header = () => {
             <ul className="login">
   
             {statelogin?.uid && <h1>Hola</h1> }
-            {console.log(statelogin)}
                 <li>
                   <Link to="/Register">Crear tu cuenta</Link>
                 </li>
