@@ -112,7 +112,7 @@ export const Header = () => {
           <div className="header-content">
             <ul className="Categorias">
               <li>
-                {/* <MainDropdown category={category} /> */}
+                <MainDropdown category={category} />
               </li>
               <li>
                 <Link to="/Ofertas">Ofertas</Link>
