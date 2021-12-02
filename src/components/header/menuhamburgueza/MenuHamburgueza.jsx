@@ -67,7 +67,7 @@ useEffect(()=>{
                 <li> <Link to="/ofretas"> <img src={iconOferta} alt="iconOferta" /> Ofertas </Link> </li>
                 <li>  <Link to="/historal"> <img src={iconHistorial} alt="iconHistorial" /> Historial </Link> </li>
                 <li>  <Link to="/mis_Compras"> <img src={iconCompras} alt="iconCompras" /> Mis Compras </Link> </li>
-                <li> <Link to="/card.payments"> <img src={iconCompras} alt="card" />CardsShop{cardShop && cardShop.length > 0 && <div className="logocard-hambur-menu">{cardShop.length}</div>} </Link></li>
+                <li> <Link to="/card.payments">{cardShop && cardShop.length > 0 && <div className="logocard-hambur-menu">{cardShop.length}</div>}  <img src={iconCompras} alt="card" />CardsShop</Link></li>
             </ul>
         </>
 

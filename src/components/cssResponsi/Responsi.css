@@ -22,7 +22,10 @@
   width: 97% !important;
 }
 .main-completar-payment{
- display: none !important;
+ display: flex !important;
+ width: 90% !important;
+ position: relative !important;
+ left: 20px !important;
 }
 
 
@@ -71,7 +74,7 @@ height: 120px;
 
 }
 
-.cardHamburgueza{
+.logocard-habur{
   display: flex !important;
 }
 
@@ -85,6 +88,9 @@ height: 120px;
   width: 90%!important;
  }
 
+ .main-link li:nth-child(8){
+  display: flex !important;
+}
 }
 
 
@@ -106,7 +112,11 @@ height: 120px;
 }
  
 .main-completar-payment{
-  display: none !important;
+  display: flex !important;
+  position: relative !important;
+  left: 10% !important;
+  width: 80% !important;
+
 }
 /* Menu Hamburgueza */
  
@@ -116,17 +126,7 @@ height: 120px;
  .main-link button{
    width: 30% !important;
  }
- .cardHamburgueza{
-  width: 80% ;
-  display: flex;
-  justify-content: flex-end;
-    
-}
 
-.cardHamburgueza img{
-  width: 7% !important;
-
-}
 
 /* Login */
 .main-login{
@@ -137,6 +137,10 @@ height: 120px;
 .main-register{
   width: 60%!important;
  }
+
+ .main-link li:nth-child(8){
+  display: flex !important;
+}
 
 }
 
@@ -162,7 +166,10 @@ height: 120px;
 }
 .main-completar-payment{
   display: flex !important;
+  position: fixed !important;
+  left: 60% !important;
   width: 35% !important;
+
 }
 
 /* Header */
@@ -197,4 +204,16 @@ height: 120px;
     width: 40%!important;
    }
 
+   /* menuhambur */
+   .logocard-habur{
+     display: none !important;
+   }
+   .logocard-hambur-menu{
+     display: none !important;
+   }
+   .main-link li:nth-child(8){
+    display: none !important;
+  }
+ 
+ 
 }
