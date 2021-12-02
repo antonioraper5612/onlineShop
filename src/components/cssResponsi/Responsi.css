@@ -1,5 +1,10 @@
 
 
+
+
+
+
+
 @media(max-width:1020px){
   .main-content-items{
     display: none !important ;
@@ -138,9 +143,12 @@ height: 120px;
   width: 60%!important;
  }
 
+/* Menu Hamburgueza */
+ 
  .main-link li:nth-child(8){
   display: flex !important;
 }
+
 
 }
 
@@ -206,13 +214,13 @@ height: 120px;
 
    /* menuhambur */
    .logocard-habur{
-     display: none !important;
+     display: flex !important;
    }
    .logocard-hambur-menu{
-     display: none !important;
+     display: flex !important;
    }
    .main-link li:nth-child(8){
-    display: none !important;
+    display: flex !important;
   }
  
  
