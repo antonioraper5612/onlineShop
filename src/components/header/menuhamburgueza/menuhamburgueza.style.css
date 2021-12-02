@@ -1,0 +1,120 @@
+.main-menu-hamburgueza{
+    position: absolute;
+    z-index: 99;
+    top: 20px;
+    right: 60px;
+    width: 2rem;
+    height: 2rem;
+    display: none;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+}
+
+.main-menu-hamburgueza span{
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #fff;
+    border-radius: 10px;
+    transform-origin: -3px;
+    transition: all 1s ease-in-out;
+}
+
+
+.rotate1{
+    transform: rotate(45deg);
+    background-color: #8555BF !important;
+}
+.rotate2{
+    transform: translateX(100%);
+    opacity: 0;
+    background-color: #8555BF !important;
+
+}
+
+.origin2{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.rotate3{
+    transform: rotate(-45deg);
+    background-color: #8555BF !important;
+
+}
+
+
+.cardHamburgueza{
+    width: 95%;
+    display: none;
+    justify-content: flex-end;
+    
+  
+}
+
+.cardHamburgueza img{
+    width: 5%;
+
+}
+
+.main-link-open , .main-link-close {
+    list-style: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+}
+
+.main-link-close {
+    transform: translateX(-100%);
+   
+}
+
+.main-link-open  li, .main-link-close li{
+    font-weight: bold;
+    color: #8555BF;
+}
+
+.main-link-open  li a, .main-link-close li a{
+    text-decoration: none;
+    color: #8555BF;
+}
+
+.main-link li img {
+ width: 10%;
+ margin: 0 20px;
+}
+
+.main-link li:nth-child(1){
+  display: flex;
+  margin: 20px ;
+}
+
+.main-link li:nth-child(2){
+    display: flex;
+    justify-content: space-around;
+  }
+
+.main-link button{
+background-color: #8555BF;
+border: none;
+color: #fff;
+padding: 5px;
+width: 45%;
+border-radius: 10px;
+
+}
+
+
+.main-link li:nth-child(1n+3) {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    
+  }
+

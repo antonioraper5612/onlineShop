@@ -14,6 +14,11 @@ const reducer =(state,action)=>{
              ...state,
              user:action.payload
           }
+          case "Login_Email":
+          return{
+             ...state,
+             user:action.payload
+          }
           case "Register_Email":
               return{
 

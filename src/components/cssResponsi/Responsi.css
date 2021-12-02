@@ -59,9 +59,37 @@ height: 120px;
   width: 80% !important;
 }
 
+/* Menu Hamburgueza */
+
+.main-menu-hamburgueza{
+  display: flex  !important;
+}
+
+.cardHamburgueza img{
+  width: 10% !important;
 
 
 }
+
+.cardHamburgueza{
+  display: flex !important;
+}
+
+/* login */
+.main-login{
+  width: 90%!important;
+ }
+
+/* register */
+.main-register{
+  width: 90%!important;
+ }
+
+}
+
+
+
+
 
 @media(min-width:426px){
  
@@ -80,8 +108,37 @@ height: 120px;
 .main-completar-payment{
   display: none !important;
 }
+/* Menu Hamburgueza */
+ 
+.main-link li img {
+  width: 6% !important;
+ }
+ .main-link button{
+   width: 30% !important;
+ }
+ .cardHamburgueza{
+  width: 80% ;
+  display: flex;
+  justify-content: flex-end;
+    
+}
 
-  }
+.cardHamburgueza img{
+  width: 7% !important;
+
+}
+
+/* Login */
+.main-login{
+  width: 60%!important;
+ }
+
+/* register */
+.main-register{
+  width: 60%!important;
+ }
+
+}
 
  
 
@@ -117,6 +174,27 @@ height: 120px;
 /* Componet Empty */
 .main-Container-Empty button {
   width: 30% !important;
-
   }
+ 
+/* Menu Hamburgueza */
+ 
+  .main-link li img {
+    width: 4% !important;
+    margin: 0 20px;
+   }
+   .main-link button{
+     width: 30% !important;
+   }
+
+  .cardHamburgueza img{
+    width: 5%!important;
+  }
+/* Login */
+  .main-login{
+   width: 40%!important;
+  }
+  .main-register{
+    width: 40%!important;
+   }
+
 }

@@ -20,16 +20,26 @@ const Login = () => {
    const [userInfo,setUserInfo]=useState ({email:"",password:""})
  
  
-  const handleLogin = ()=>{
+  const handleLogin = async ()=>{
+    try {
+      const { user } = await firebase.auth().signInWithEmailAndPassword(userInfo.email,userInfo.password)
+      const { displayName, email, uid } = user
+      dispatchLogin({type:"Login_Email",payload:{displayName, email, uid}})
+    } catch (error) {
+       console.log(error)
+    } 
    
- console.log(userInfo)
   }
   
   const handleLoginGoole= async ()=>{
-    const { user } = await firebase.auth().signInWithPopup(provedor.google)
-    const { displayName, email, uid } = user
-  
-  dispatchLogin({type:"Login_Google",payload:{displayName, email, uid}})
+    try {
+      const { user } = await firebase.auth().signInWithPopup(provedor.google)
+      const { displayName, email, uid } = user
+    dispatchLogin({type:"Login_Google",payload:{displayName, email, uid}})
+    } catch (error) {
+       console.log(error)
+    }
+
   }
  
  

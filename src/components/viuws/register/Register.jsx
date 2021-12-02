@@ -7,7 +7,7 @@ import "../register/register.style.css";
 
 const Register = () => {
 
-  const [userInfo,setUserInfo]=useState ({email:"",password:""})
+  const [userInfo,setUserInfo]=useState ({usuario:"",email:"",password:""})
 
   const handleRegister =()=>{
 
@@ -18,7 +18,9 @@ const Register = () => {
               <div className="main-register">
                 <div className="register-container">
                   <h1>¡Hola! Register</h1>
-                  <label>E-mail o usuario</label>
+                  <label>usuario</label>
+                  <input type="text" onChange={(e)=>setUserInfo({...userInfo,usuario:e.target.value})} />
+                  <label>E-mail</label>
                   <input type="text" onChange={(e)=>setUserInfo({...userInfo,email:e.target.value})} />
                   <label>Password</label>
                   <input type="password" onChange={(e)=>setUserInfo({...userInfo,password:e.target.value})}/>

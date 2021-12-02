@@ -1,12 +1,13 @@
 
 import {createContext,useReducer} from "react";
 
+
 const ProductContext=createContext()
 
 
 const initialState = {
   product:[],
-  searchProcuct:[]
+  searchProcuct:[],
  
   }
 

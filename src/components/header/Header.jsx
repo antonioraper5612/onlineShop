@@ -12,12 +12,16 @@ import 'animate.css';
 import "../header/header.style.css"
 import "../cssResponsi/Responsi.css"
 
+
 //Import Contex
 import ProductContext from "../../Context/ProductContext"
 import AddProductContext from "../../Context/AddProductContext";
+import LoginContext from "../../Context/LoginContext";
+
 
 //import componets
 import MainDropdown from "../dropdown/MainDropdown"
+import MenuHamburgueza from "./menuhamburgueza/MenuHamburgueza";
 
 export const Header = () => {
 
@@ -28,9 +32,15 @@ export const Header = () => {
   //Context Product
   const { state: Product, dispatch: dispatchProduct } = useContext(ProductContext)
 
-  //state
+  //state context product
   const [searchProduct, setsearchProduct] = useState("")
+
+  //state context login
+  const { state:statelogin } = useContext(LoginContext)
+  //state
   const [category, setCategory] = useState([])
+
+
 
   //Use Router
   const { pathname } = useLocation()
@@ -81,58 +91,62 @@ export const Header = () => {
 
   return (
     <>
-        <div className="main-header ">
-          <form className="form-header" onSubmit={(e) => handleSearch(e, searchProduct)}>
-            <div className="main-logo">
-              <Link to="/" className="animate__animated animate__rubberBand">
-                <img src={logo} alt="Logo"></img>
-                Online Shopping</Link>
-            </div>
-            {pathname === "/" &&
+      <div className="main-header ">
+        <form className="form-header" onSubmit={(e) => handleSearch(e, searchProduct)}>
+          <div className="main-logo">
+            <Link to="/" className="animate__animated animate__rubberBand">
+              <img src={logo} alt="Logo"></img>
+              Online Shopping</Link>
+          </div>
+          {pathname === "/" &&
             <div className="main-search">
               <input type="text" onChange={(e) => setsearchProduct(e.target.value)} />
               <button type="submit">
                 <img src={search} alt="" />
               </button>
-            </div> }
-          </form>
-        
-          <div className="main-content-items ">
-            <div className="header-content">
-              <ul className="Categorias">
-                <li>
-                  <MainDropdown category={category} />
-                </li>
-                <li>
-                  <Link to="/Ofertas">Ofertas</Link>
-                </li>
-                <li>
-                  <Link to="/Historial">Historial</Link>
-                </li>
-              </ul>
-            </div>
-            <div className="header-content">
-              <ul className="login">
+            </div>}
+
+        </form>
+        <MenuHamburgueza />
+        <div className="main-content-items ">
+          <div className="header-content">
+            <ul className="Categorias">
+              <li>
+                {/* <MainDropdown category={category} /> */}
+              </li>
+              <li>
+                <Link to="/Ofertas">Ofertas</Link>
+              </li>
+              <li>
+                <Link to="/Historial">Historial</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="header-content">
+            <ul className="login">
+  
+            {statelogin?.uid && <h1>Hola</h1> }
+            {console.log(statelogin)}
                 <li>
                   <Link to="/Register">Crear tu cuenta</Link>
                 </li>
                 <li>
-                  <Link to="/login">Ingresar</Link>
-                </li>
-                <li>
-                  <Link to="/Miscompras">Mis comprar</Link>
-                </li>
-                <li>
-                  <Link to="/card.payments">
-                    <img src={card} alt="card" />
-                    {cardShop && cardShop.length > 0 &&
-                      <div className="logocard">{cardShop.length}</div>}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                  <Link to="/login">Ingresar</Link>     
+                </li> 
+              <li>
+                <Link to="/Miscompras">Mis comprar</Link>
+              </li>
+              <li>
+                <Link to="/card.payments">
+                  <img src={card} alt="card" />
+                  {cardShop && cardShop.length > 0 &&
+                    <div className="logocard">{cardShop.length}</div>}
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
     </>
   );
 };
