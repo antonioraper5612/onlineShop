@@ -3,8 +3,6 @@
 
 
 
-
-
 @media(max-width:1020px){
   .main-content-items{
     display: none !important ;
@@ -214,7 +212,7 @@ height: 120px;
 
    /* menuhambur */
    .logocard-habur{
-     display: flex !important;
+     display: none !important;
    }
    .logocard-hambur-menu{
      display: flex !important;

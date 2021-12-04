@@ -1,5 +1,7 @@
 import React, { useEffect,useContext } from "react";
 
+
+
 // import CarouselImg from "../views/CarouselImg";
 // import Cards from "../views/Cards";
 // import Ofertas from "../Home/Ofertas";
@@ -15,6 +17,8 @@ import Cards from "../viuws/card/Cards"
 
 const Home = () => {
   const {dispatch} = useContext(ProductContext)
+ 
+
 
 
   useEffect(() => {

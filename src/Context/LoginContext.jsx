@@ -19,10 +19,17 @@ const reducer =(state,action)=>{
              ...state,
              user:action.payload
           }
-          case "Register_Email":
+          case "Register_User":
               return{
-
+                ...state,
+                user:action.payload
               }
+              case "sigOut_Login":
+              return{
+                ...state,
+                user:action.payload
+              } 
+              
         default:
             return state
             

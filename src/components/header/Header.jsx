@@ -19,9 +19,18 @@ import AddProductContext from "../../Context/AddProductContext";
 import LoginContext from "../../Context/LoginContext";
 
 
+//firebase
+import { getAuth, signOut } from "firebase/auth";
+
+
 //import componets
 import MainDropdown from "../dropdown/MainDropdown"
 import MenuHamburgueza from "./menuhamburgueza/MenuHamburgueza";
+
+
+//iconos
+
+import userProfile from "../iconos/userProfile.png"
 
 export const Header = () => {
 
@@ -36,9 +45,10 @@ export const Header = () => {
   const [searchProduct, setsearchProduct] = useState("")
 
   //state context login
-  const { state:statelogin } = useContext(LoginContext)
+  const { state: statelogin, dispatch: dispatchLogin } = useContext(LoginContext)
   //state
   const [category, setCategory] = useState([])
+  const [menuProfile, setMenuProfile] = useState(false)
 
 
 
@@ -88,6 +98,17 @@ export const Header = () => {
     }
   }
 
+  const handleLogout = () => {
+    const auth = getAuth();
+    signOut(auth)
+    dispatchLogin({ type: "sigOut_Login", payload: null })
+
+  }
+
+  const handleProfile = () => {
+    setMenuProfile(!menuProfile)
+  }
+
 
   return (
     <>
@@ -107,7 +128,7 @@ export const Header = () => {
             </div>}
 
         </form>
-        <MenuHamburgueza cardShop={cardShop}/>
+        <MenuHamburgueza cardShop={cardShop} />
         <div className="main-content-items ">
           <div className="header-content">
             <ul className="Categorias">
@@ -124,14 +145,13 @@ export const Header = () => {
           </div>
           <div className="header-content">
             <ul className="login">
-  
-            {statelogin?.uid && <h1>Hola</h1> }
-                <li>
-                  <Link to="/Register">Crear tu cuenta</Link>
-                </li>
-                <li>
-                  <Link to="/login">Ingresar</Link>     
-                </li> 
+
+              {!statelogin.user && (
+                <>
+                  <li><Link to="/Register">Crear tu cuenta</Link></li>
+                  <li><Link to="/login">Ingresar</Link></li>
+                </>
+              )}
               <li>
                 <Link to="/Miscompras">Mis comprar</Link>
               </li>
@@ -143,6 +163,18 @@ export const Header = () => {
                 </Link>
               </li>
             </ul>
+            {statelogin?.user &&
+              <div className="main-avatar">
+                <img onClick={handleProfile} 
+                src={statelogin.user.photoURL ? statelogin?.user?.photoURL : userProfile } alt="profile"></img>
+                <div className="main-menu">
+                  <ul className={`${menuProfile ? "main-menu-open" : "main-menu-close"}`}>
+                    <li>{statelogin.user.displayName ? statelogin.user.displayName : statelogin.user.email  }</li>
+                    <li onClick={handleLogout}>Logout</li>
+                  </ul>
+                </div>
+              </div>
+            }
           </div>
         </div>
       </div>

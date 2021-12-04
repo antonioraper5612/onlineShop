@@ -1,3 +1,8 @@
+import React,{useEffect,useContext} from 'react';
+
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+
 import './App.css';
 import './index.css';
 import "./components/cssResponsi/Responsi.css"
@@ -23,14 +28,30 @@ import Register from "./components/viuws/register/Register"
 import CardPayments from "./components/viuws/Cardpayments/CardPayments"
 // import Cards from "./components/viuws/card/Cards"
 
+import LoginContext from './Context/LoginContext';
+
 import { ProductProvider } from './Context/ProductContext';
 import { AddProductProvider } from './Context/AddProductContext';
-import {LoginProvider} from './Context/LoginContext';
+
 
 
 function App() {
+
+
+  const {dispatch:dispatchLogin}=useContext(LoginContext)
+
+  useEffect(()=>{
+    const auth = getAuth();
+  onAuthStateChanged(auth, (user) => {
+    if (user?.uid) {
+      dispatchLogin({type:"Login_Email", payload:user})
+    } else {
+    }
+  });
+  },[dispatchLogin])
+
   return (
-    <LoginProvider>
+   
       <AddProductProvider>
         <ProductProvider >
           <BrowserRouter>
@@ -48,9 +69,9 @@ function App() {
                 <Route path="/category/:category" exact>
                   {/* <Cards /> */}
                 </Route>
-                <Route path="/Login" exact>
-                  <Login />
-                </Route>
+                <Route path="/login" exact> 
+                  <Login/>
+                  </Route>
                 <Route path="/Register" exact>
                   <Register />
                 </Route>
@@ -59,7 +80,6 @@ function App() {
           </BrowserRouter>
         </ProductProvider>
       </AddProductProvider>
-    </LoginProvider>
   );
 }
 
